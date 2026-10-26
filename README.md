@@ -6,6 +6,24 @@ Monorepo con pnpm y TypeScript para herramientas de documentación.
 
 Node.js 22 o superior y pnpm 12.4.2.
 
+## Instalar la extensión en VS Code
+
+Si ya tienes el archivo `.vsix`, continúa en el paso 2. Para generarlo necesitas Node.js y pnpm según los requisitos anteriores.
+
+1. Desde la raíz del repositorio, ejecuta:
+
+   ```sh
+   pnpm install
+   pnpm package:extension
+   ```
+
+   El instalador se genera en `apps/vscode/doc-craft-vscode-0.1.0.vsix`.
+
+2. En VS Code, abre la paleta de comandos con **⌘⇧P** en macOS o **Ctrl+Shift+P** en Windows/Linux.
+3. Busca y selecciona **Extensions: Install from VSIX…**.
+4. Selecciona el archivo `.vsix` y recarga VS Code si lo solicita.
+5. Abre un archivo `.md`, `.markdown`, `.mmd` o `.mermaid` y ejecuta **Doc Craft: Abrir vista previa** desde la paleta.
+
 ## Desarrollo
 
 ```sh
