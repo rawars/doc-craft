@@ -2,6 +2,15 @@
 
 Vista previa en vivo de Markdown y diagramas Mermaid, sin depender de un CDN.
 
+## Instalación
+
+1. [Descarga el instalador de Doc Craft v0.1.0](https://github.com/rawars/doc-craft/releases/download/v0.1.0/doc-craft-vscode-0.1.0.vsix).
+2. En VS Code 1.96 o superior, abre la paleta con **⌘⇧P** (macOS) o **Ctrl+Shift+P** (Windows/Linux).
+3. Ejecuta **Extensions: Install from VSIX…** y selecciona el archivo descargado.
+4. Recarga VS Code si lo solicita.
+
+No necesitas Node.js, pnpm ni compilar el proyecto.
+
 ## Uso
 
 1. Abre un archivo `.md`, `.markdown`, `.mmd` o `.mermaid`.
