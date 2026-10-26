@@ -1,0 +1,68 @@
+{
+  "name": "doc-craft-vscode",
+  "displayName": "Doc Craft",
+  "description": "Vista previa en vivo de Markdown y diagramas Mermaid.",
+  "version": "0.1.0",
+  "publisher": "doc-craft",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "main": "./dist/extension.cjs",
+  "activationEvents": [
+    "onCommand:docCraft.openPreview"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "docCraft.openPreview",
+        "title": "Doc Craft: Abrir vista previa",
+        "icon": "$(open-preview)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "docCraft.openPreview",
+          "when": "resourceExtname =~ /\\.(md|markdown|mmd|mermaid)$/",
+          "group": "navigation"
+        }
+      ]
+    },
+    "languages": [
+      {
+        "id": "mermaid",
+        "aliases": [
+          "Mermaid"
+        ],
+        "extensions": [
+          ".mmd",
+          ".mermaid"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "check": "tsc --noEmit",
+    "vscode:prepublish": "pnpm build",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {
+    "@doc-craft/markdown": "workspace:*",
+    "mermaid": "^12.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/vscode": "1.96.0",
+    "@vscode/vsce": "^4.0.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}
